@@ -1,4 +1,7 @@
 let num;
+
+
+
 let valanu;
 
 function createForm() {
@@ -50,6 +53,10 @@ function submit() {
         document.getElementById('form2Container').appendChild(lineBreak);
         formDataArray1.push(inputField);
     }
+    valanu=document.querySelector('#option').value
+    // console.log(valanu.value)
+
+
     // document.getElementById('form2Container').appendChild(inputField);
     const submit2 = document.createElement('button');
     document.getElementById('form2Container').appendChild(submit2);
@@ -139,6 +146,8 @@ function submit() {
         
     });
 }
+
+
 function countprint(){
     let c0=0;
     let c1=0;
@@ -148,24 +157,33 @@ function countprint(){
         else
             c1++;
     }
-   console.log(valanu);
+//    console.log(valanu);
 
-    if(valanu=='ANY'){
-        if(c1>=1){
-            document.querySelector('#f').innerText=`Your Loan is Granted`;
-        }
-        else{
-            document.querySelector('#f').innerText=`Loan Not Granted`;
-        }
+   if(valanu==="all"){
+    console.log(valanu);
+    // console.log(c1);
+    if(c1==num){
+
+        let opt=document.querySelector('#fs')
+        opt.innerText=`Success claue of c1 is ${c1} and value of num is ${num}`
     }
-    if(valanu=='ALL'){ 
-        if(c1===num){
-            document.querySelector('#f').innerText=`Loan Granted`;
-        }
-        else{
-            document.querySelector('#f').innerText=`Marao`;
-        }
+    else{
+        let opt=document.querySelector('#fs')
+        opt.innerText=`fail claue of c1 is ${c1} and value of num is ${num}`
     }
+   }
+
+   else if(valanu==="any"){
+    if(c1>=1){
+
+        let opt=document.querySelector('#fs')
+        opt.innerText=`Success vlaue of c1 is ${c1} and value of num is ${num}`
+    }
+    else{
+        let opt=document.querySelector('#fs')
+        opt.innerText=`Fail claue of c1 is ${c1} and value of num is ${num}`
+    }
+   }
     
 }
 
