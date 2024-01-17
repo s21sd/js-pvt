@@ -1,7 +1,6 @@
 let num;
 
 
-
 let valanu;
 
 function createForm() {
@@ -13,22 +12,34 @@ function createForm() {
     const n = document.getElementById('nInput').value;
     num=n;
     // Create 'n' input fields
+    let k=1;
     for (let i = 1; i <= 3*n; i++) {
         const inputField = document.createElement('input');
         inputField.type = 'text';
-        inputField.placeholder = `Enter data ${i}`;
+        if((i-1)%3==0)
+            inputField.placeholder = `LHS ${k}`;
+        else if((i-1)%3==1)
+            inputField.placeholder = `Operator ${k}`;
+        else
+            inputField.placeholder = `Value ${k}`;
         inputField.id = `data${i}`;
+        
         inputField.className = 'formData';
+        inputField.style.width='20%';
         
         // Append input field to the form container
         document.getElementById('formContainer').appendChild(inputField);
+       
         if(i%3==0){
+        k++;    
         const lineBreak = document.createElement('br');
         document.getElementById('formContainer').appendChild(lineBreak);
         }
     }
     const option = document.createElement('br');
     document.getElementById('formContainer').appendChild(lineBreak);
+    hd.classList.remove("hide");
+   
 }
 
 let arrayCheck = [];
@@ -40,19 +51,37 @@ function submit() {
     const n = document.getElementById('nInput').value;
 
     // Create 'n' input fields
+    let j=0;
     for (let i = 1; i <= n; i++) {
+        // Create label
+        const formDataElements = document.getElementsByClassName('formData');
+        const formDataArray = Array.from(formDataElements);
+
+
+        const label = document.createElement('label');
+        label.innerText = `Enter ${formDataArray[j].value}`;
+        label.for = `data${i}`;
+        
+        // Create input field
         const inputField = document.createElement('input');
         inputField.type = 'text';
         inputField.placeholder = `Enter data ${i}`;
         inputField.id = `data${i}`;
         inputField.className = 'formData';
         
-        // Append input field to the form container
+        // Append label and input field to the form container
+        document.getElementById('form2Container').appendChild(label);
         document.getElementById('form2Container').appendChild(inputField);
+        
+        // Add line break
         const lineBreak = document.createElement('br');
         document.getElementById('form2Container').appendChild(lineBreak);
+    
+        // Store input field in an array if needed
         formDataArray1.push(inputField);
+        j=j+3;
     }
+    
     valanu=document.querySelector('#option').value
     // console.log(valanu.value)
 
