@@ -1,50 +1,138 @@
-body{
-    background-color: blue;
-}
-label{
-    font-size: 2rem;
-}
-input{
-    height: 35px;
-    width: 28%;
-    font-size: 1.4rem;
-    text-align: center; 
-    border: 2px solid green;
-border-radius: 300px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  background-color: #4ec2cf;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-#cdf{
-  margin-bottom: 35px;
+.container {
+  border: 1px solid gray;
+  border-radius: 32px;
+  margin: 32px;
+  display: grid;
+  margin: auto;
+  width: 80%;
+}
+
+.form {
+  display: grid;
+  margin-top: 20px;
+
+}
+
+label {
+  margin-top: 12px;
+  margin-left: 32px;
+  font-size: 1.5rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s ease-out;
+}
+
+#cdf {
+  margin: 12px 0px 12px 20px;
+
+}
+
+h1 {
+  margin: 20px 0px 12px 20px;
+}
+
+
+input {
+  height: 35px;
+  width: 40%;
+  font-size: 1.4rem;
+  text-align: center;
+  border: 2px solid green;
+  border-radius: 300px;
+  margin-left: 32px;
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: rgb(241, 236, 236);
+  transition: border-color 0.3s ease-out;
+}
+
+.formData2 {
+  height: 35px;
+  width: 40%;
+  font-size: 1.4rem;
+  text-align: center;
+  border: 2px solid green;
+  border-radius: 300px;
+  margin-left: 32px;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-out;
+}
+
+
+
+input:focus {
+  border-color: #007BFF;
+}
+
+input:focus+label,
+input:not(:placeholder-shown)+.input-label {
+  top: 0;
+  font-size: 12px;
+  color: #007BFF;
 }
 
 /* CSS */
 button {
-   appearance: none;
-    background-color: transparent;
-    border: 2px solid #1A1A1A;
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: #3B3B3B;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    font-size: 16px;
-    font-weight: 600;
-    line-height: normal;
-    margin: 0;
-    min-height: 60px;
-    min-width: 0;
-    outline: none;
-    padding: 12px 18px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 15%;
-    will-change: transform;
-  }
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 10;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 12px 18px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 15%;
+  will-change: transform;
+}
+
+
+.resultbtn {
+  margin: 12px 0px 12px 20px;
+}
+
+.resultbtn:hover {
+  color: #fff;
+  background-color: green;
+  box-shadow: rgba(142, 232, 179, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  border: none;
+}
+
+#submit {
+  margin: 12px 0px 12px 20px;
+}
+
 
 button:disabled {
   pointer-events: none;
@@ -62,22 +150,26 @@ button:active {
   transform: translateY(0);
 }
 
-#formContainer{
+#formContainer {
 
-  margin-top: 80px;
- 
-  
+  margin-top: 40px;
 
 }
 
-#option{
+#sub2 {
+  margin: 12px 0px 12px 20px;
+}
+
+#option {
   margin-top: 20px;
 }
-#s2{
-   /* margin-bottom: 60px; */
+
+#s2 {
+  margin-right: 4px;
 }
 
-.formData{
-margin: 10px;
+.formData {
+  margin: 0, 10px;
+
 
 }

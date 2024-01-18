@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Form</title>
     <link rel="stylesheet" href="anucss.css">
 </head>
+
 <body>
 
-<form>
-    <label>Enter number of constraints : </label>
-    <input type="number" id="nInput" min="1">
-</form>
+    <div class="container">
+        <h1>Dynamic Form:</h1>
+        <form class="form">
+            <label>Enter number of constraints : </label>
+            <input type="number" id="nInput" min="1" placeholder="Enter number of constraints">
+        </form>
 
-<button id="cdf" onclick="createForm()" style="display: inline;">Create Data Fields</button>
+        <button id="cdf" onclick="createForm()" style="display: inline;">Create Data Fields</button>
 
-<div id="formContainer">
-    <!-- Form will be dynamically created here -->
-</div>
-
-
-
+        <h1 id="heading"></h1>
+        <div id="formContainer">
+            <!-- Form will be dynamically created here -->
+        </div>
 
 
-<div id="submit" >
-    <button onclick="submit()"  id="s2">Enter values</button>
-</div>
 
-<input type="text" name="" id="option">
 
-<div id="form2Container">
-    <!-- Form will be dynamically created here -->
-</div>
-<div id="resultContainer">
-    <p id="result"></p>
-</div>
 
-<button type="submit" id="count" onclick="countprint()">Get Result</button>
+        <div id="submit">
+            <button onclick="submit()" id="s2">Enter values</button>
+            <button onclick="update()" id="s3">Add Data Fields</button>
+        </div>
 
-<p id="fs"></p>
-<script src="anujs.js"></script>
+        <!-- <input type="text" name="" id="option"> -->
+        <label for="option">Select Option:</label>
+        <select id="option" class="formData2" style="width: 20%;">
+            <option value="all">All</option>
+            <option value="any">Any</option>
+        </select>
+
+
+        <div id="form2Container">
+            <!-- Form will be dynamically created here -->
+        </div>
+        <div id="resultContainer">
+            <p id="result"></p>
+        </div>
+
+        <button class="resultbtn" type="submit" id="count" onclick="countprint()">Get Result</button>
+
+        <p id="fs"></p>
+    </div>
+    <script src="anujs.js"></script>
 </body>
+
 </html>
